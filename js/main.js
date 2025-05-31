@@ -1,9 +1,9 @@
 /**
- * TikTok Profile Analyzer - Main Entry Point
+ * TikTok Profile Scraper - Main Entry Point
  * メインエントリーポイント
  */
 
-import { DOMElements } from './dom-elements.js';
+import { DOMElements } from './dom-manager.js';
 import { UIManager } from './ui-manager.js';
 import { TikTokAnalyzer } from './tiktok-analyzer.js';
 

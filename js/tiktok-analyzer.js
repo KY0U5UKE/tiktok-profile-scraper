@@ -1,5 +1,5 @@
 /**
- * TikTok Analyzer
+ * TikTok Profile Scraper - TikTok Analyzer
  * TikTokプロフィールの分析処理を行うクラス
  */
 
@@ -32,7 +32,7 @@ export class TikTokAnalyzer {
 
         try {
             // TikTokデータを取得
-            const response = await fetch(`php/fetch-tiktok.php?id=${encodeURIComponent(tiktokId)}`);
+            const response = await fetch(`php/tiktok-scrape.php?id=${encodeURIComponent(tiktokId)}`);
             const data = await response.json();
 
             if (data.error) {

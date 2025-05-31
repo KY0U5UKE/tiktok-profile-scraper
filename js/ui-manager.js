@@ -1,5 +1,5 @@
 /**
- * UI Manager
+ * TikTok Profile Scraper - UI Manager
  * ユーザーインターフェースの状態管理と表示制御を行うクラス
  */
 

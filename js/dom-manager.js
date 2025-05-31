@@ -1,5 +1,5 @@
 /**
- * DOM Elements Manager
+ * TikTok Profile Scraper - DOM Elements Manager
  * DOM要素の取得と管理を行うクラス
  */
 

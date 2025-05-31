@@ -1,5 +1,5 @@
 /**
- * Utility Functions
+ * TikTok Profile Scraper - Utility Functions
  * 共通で使用されるユーティリティ関数集
  */
 
