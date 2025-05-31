@@ -1,0 +1,38 @@
+/**
+ * Main Stylesheet
+ * 全体のスタイルシートをインポートするメインファイル
+ */
+
+/* CSS変数とベーススタイル */
+@import 'variables.css';
+@import 'base.css';
+
+/* コンポーネント別スタイル */
+@import 'header.css';
+@import 'profile.css';
+@import 'stats.css';
+@import 'meta.css';
+
+/* ユーティリティとエフェクト */
+@import 'utils.css';
+@import 'animations.css';
+
+/* レスポンシブデザイン */
+@import 'responsive.css';
+
+/* ==========================================================================
+   プロジェクト概要
+   
+   このプロジェクトは、SNSプロフィール検索・表示アプリケーションのスタイル定義です。
+   
+   ファイル構成:
+   - variables.css: カラー、スペーシング、エフェクトの変数定義
+   - base.css: リセットスタイルと基本設定
+   - header.css: ヘッダーと検索フォーム
+   - profile.css: プロフィール表示エリア
+   - stats.css: 統計情報表示
+   - meta.css: 詳細メタ情報表示
+   - utils.css: ローダー、エラー表示などのユーティリティ
+   - animations.css: アニメーション定義
+   - responsive.css: レスポンシブデザイン
+   ========================================================================== */

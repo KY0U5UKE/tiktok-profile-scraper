@@ -1,0 +1,40 @@
+/**
+ * Base Styles
+ * リセットスタイルと基本的なHTML要素のスタイル定義
+ */
+
+/* リセット */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans JP', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ボディの基本設定 */
+body {
+    background-color: #f5f5f5;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-y: scroll;
+}
+
+/* コンテナレイアウト */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-xl);
+}
+
+/* 基本的な見出し */
+h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-xs);
+}
+
+/* サブタイトル */
+.subtitle {
+    font-size: 1rem;
+    opacity: 0.9;
+}

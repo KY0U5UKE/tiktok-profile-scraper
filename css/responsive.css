@@ -1,0 +1,83 @@
+/**
+ * Responsive Design
+ * レスポンシブデザイン用のメディアクエリ定義
+ */
+
+/* タブレット・小さなデスクトップ (768px以下) */
+@media (max-width: 768px) {
+    /* コンテナの調整 */
+    .container {
+        padding: var(--spacing-md);
+    }
+
+    /* プロフィールヘッダーの調整 */
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        padding: var(--spacing-lg);
+        align-items: center;
+    }
+
+    .profile-info {
+        margin-left: 0;
+        margin-top: var(--spacing-lg);
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-name {
+        justify-content: center;
+    }
+
+    .profile-bio {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    #profile-avatar-link {
+        margin: 0 auto;
+    }
+
+    /* 統計表示の調整 */
+    .stats-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .stat-item {
+        padding: var(--spacing-md) var(--spacing-xs);
+    }
+
+    /* メタ情報の調整 */
+    .meta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .meta-item {
+        border-right: none;
+    }
+}
+
+/* スマートフォン (480px以下) */
+@media (max-width: 480px) {
+    /* 統計表示をさらに調整 */
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* 検索フォームを縦並びに */
+    .search-form {
+        flex-direction: column;
+    }
+
+    .search-form input {
+        width: 100%;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .search-form button {
+        width: 100%;
+        margin-left: 0;
+    }
+}

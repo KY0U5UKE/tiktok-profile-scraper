@@ -1,0 +1,35 @@
+/**
+ * CSS Variables
+ * プロジェクト全体で使用するCSS変数の定義
+ */
+
+:root {
+    /* カラーパレット */
+    --primary-color: #17a2b8;      /* メインカラー（青緑） */
+    --secondary-color: #f8f9fa;    /* セカンダリカラー（薄いグレー） */
+    --text-color: #212529;         /* メインテキストカラー */
+    --light-grey: #e9ecef;         /* 薄いグレー */
+    --dark-grey: #6c757d;          /* 濃いグレー */
+    
+    /* エフェクト */
+    --shadow: 0 4px 6px rgba(0, 0, 0, .1);           /* 標準シャドウ */
+    --shadow-hover: 0 6px 12px rgba(0, 0, 0, .15);   /* ホバー時シャドウ */
+    --focus-shadow: 0 0 0 3px rgba(23, 162, 184, .25); /* フォーカス時シャドウ */
+    
+    /* スペーシング */
+    --spacing-xs: 0.5rem;   /* 8px */
+    --spacing-sm: 0.8rem;   /* 12.8px */
+    --spacing-md: 1rem;     /* 16px */
+    --spacing-lg: 1.5rem;   /* 24px */
+    --spacing-xl: 2rem;     /* 32px */
+    
+    /* ボーダー半径 */
+    --border-radius-sm: 5px;
+    --border-radius-md: 10px;
+    --border-radius-full: 50px;
+    
+    /* トランジション */
+    --transition-fast: 0.3s ease;
+    --transition-normal: 0.5s ease;
+    --transition-slow: 0.6s ease;
+}

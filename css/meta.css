@@ -1,0 +1,121 @@
+/**
+ * Meta Information Component
+ * 詳細メタ情報表示のスタイル定義
+ */
+
+/* 高度な情報切り替えボタン */
+.advanced-toggle {
+    padding: var(--spacing-lg);
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid var(--light-grey);
+}
+
+.advanced-toggle button {
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
+    border: none;
+    border-radius: var(--border-radius-full);
+    padding: 0.7rem var(--spacing-lg);
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.advanced-toggle button i {
+    margin-right: var(--spacing-xs);
+}
+
+.advanced-toggle button:hover {
+    background-color: #e2e6ea;
+    color: var(--text-color);
+}
+
+/* メタ情報コンテナ */
+.meta-container {
+    display: block;
+    padding: 0;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.meta-container.slide-down {
+    animation: slideDown var(--transition-normal) forwards;
+}
+
+.meta-container.slide-up {
+    animation: slideUp var(--transition-normal) forwards;
+}
+
+.meta-container .meta-title,
+.meta-container .meta-grid {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.meta-container.active .meta-title,
+.meta-container.active .meta-grid {
+    opacity: 1;
+    transition-delay: 0.15s;
+}
+
+/* メタ情報タイトル */
+.meta-title {
+    padding: var(--spacing-lg);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--light-grey);
+    display: flex;
+    align-items: center;
+}
+
+.meta-title i {
+    margin-right: var(--spacing-sm);
+}
+
+/* メタ情報グリッド */
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 0;
+}
+
+.meta-item {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-bottom: 1px solid var(--light-grey);
+    border-right: 1px solid var(--light-grey);
+    transition: background-color var(--transition-fast);
+}
+
+.meta-item:hover {
+    background-color: rgba(23, 162, 184, .05);
+}
+
+/* メタ情報ラベル */
+.meta-label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--dark-grey);
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.meta-label i {
+    width: 20px;
+    margin-right: var(--spacing-xs);
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* メタ情報値 */
+.meta-value {
+    color: var(--text-color);
+    font-size: 1rem;
+    word-break: break-word;
+}

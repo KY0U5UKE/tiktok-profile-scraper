@@ -1,0 +1,68 @@
+/**
+ * Header Component
+ * ヘッダーと検索フォームのスタイル定義
+ */
+
+/* メインヘッダー */
+.header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+    text-align: center;
+    box-shadow: var(--shadow);
+    margin-bottom: 0;
+    animation: fadeIn var(--transition-slow);
+}
+
+/* 検索フォームエリア */
+.search-form {
+    background-color: #fff;
+    padding: var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    box-shadow: var(--shadow);
+    margin-bottom: var(--spacing-lg);
+    border-radius: 0 0 var(--border-radius-md) var(--border-radius-md);
+    animation: fadeIn var(--transition-slow);
+}
+
+/* 検索入力フィールド */
+.search-form input {
+    flex: 1;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--light-grey);
+    border-radius: var(--border-radius-full);
+    font-size: 1rem;
+    outline: none;
+    transition: all var(--transition-fast);
+}
+
+.search-form input:focus {
+    border-color: var(--primary-color);
+    box-shadow: var(--focus-shadow);
+}
+
+/* 検索ボタン */
+.search-form button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--border-radius-full);
+    margin-left: var(--spacing-sm);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color var(--transition-fast);
+    display: flex;
+    align-items: center;
+}
+
+.search-form button i {
+    margin-right: var(--spacing-xs);
+}
+
+.search-form button:hover {
+    background-color: #138496;
+}

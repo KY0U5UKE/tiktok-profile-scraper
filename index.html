@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTok プロフィール解析ツール</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="module" src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fab fa-tiktok"></i> TikTok<br>プロフィール解析ツール </h1>
+            <p class="subtitle">TikTok IDを入力してプロフィール情報を解析</p>
+        </div>
+
+        <div class="search-form">
+            <input type="text" id="tiktok-id" placeholder="ユーザーネーム (例: tiktok)" required>
+            <button id="analyze-btn"><i class="fas fa-search"></i> 解析開始</button>
+        </div>
+
+        <div class="loader-container" id="loader">
+            <div class="spinner"></div>
+        </div>
+
+        <div class="error-container" id="error-container">
+            <p id="error-message"><i class="fas fa-exclamation-circle"></i> <span id="error-text"></span></p>
+        </div>
+
+        <div class="result-container" id="result-container">
+            <div class="profile-header">
+                <a href="" id="profile-avatar-link" style="border-radius: 50%; display: block; overflow: hidden;">
+                    <img src="" alt="Profile Avatar" class="avatar" id="profile-avatar">
+                </a>
+                <div class="profile-info">
+                    <a href="" id="profile-info-link" style="color: inherit; text-decoration: none;">
+                        <h2 class="profile-name" id="profile-nickname"></h2>
+                        <p class="profile-id" id="profile-uniqueid"></p>
+                        <p class="profile-bio" id="profile-signature"></p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="stats-container">
+                <div class="stat-item">
+                    <i class="fas fa-users"></i>
+                    <div class="stat-value" id="follower-count">0</div>
+                    <div class="stat-label">フォロワー</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-user-plus"></i>
+                    <div class="stat-value" id="following-count">0</div>
+                    <div class="stat-label">フォロー中</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-video"></i>
+                    <div class="stat-value" id="video-count">0</div>
+                    <div class="stat-label">投稿数</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-heart"></i>
+                    <div class="stat-value" id="heart-count">0</div>
+                    <div class="stat-label">受けたいいね</div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-user-friends"></i>
+                    <div class="stat-value" id="friend-count">0</div>
+                    <div class="stat-label">友達</div>
+                </div>
+            </div>
+
+            <div class="advanced-toggle">
+                <button id="toggle-advanced"><i class="fas fa-cog"></i> 詳細情報を表示</button>
+            </div>
+
+            <div class="meta-container" id="meta-container" style="display: none;">
+                <h3 class="meta-title"><i class="fas fa-info-circle"></i> アカウント詳細情報</h3>
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-id-card"></i> アカウントID</div>
+                        <div class="meta-value" id="account-id"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-key"></i> SecUid</div>
+                        <div class="meta-value" id="sec-uid"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-id-badge"></i> ShortID</div>
+                        <div class="meta-value" id="short-id"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-calendar-alt"></i> 作成日時</div>
+                        <div class="meta-value" id="create-time"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-edit"></i> 最終更新</div>
+                        <div class="meta-value" id="nickname-modify-time"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-check-circle"></i> 認証済み</div>
+                        <div class="meta-value" id="verified"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-lock"></i> 非公開アカウント</div>
+                        <div class="meta-value" id="private-account"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-globe"></i> 地域</div>
+                        <div class="meta-value" id="region"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-language"></i> 言語</div>
+                        <div class="meta-value" id="language"></div>
+                    </div>
+                </div>
+
+                <h3 class="meta-title"><i class="fas fa-cogs"></i> アカウント設定</h3>
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-comment"></i> コメント設定</div>
+                        <div class="meta-value" id="comment-setting"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-sync-alt"></i> Duet設定</div>
+                        <div class="meta-value" id="duet-setting"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-cut"></i> Stitch設定</div>
+                        <div class="meta-value" id="stitch-setting"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-download"></i> ダウンロード設定</div>
+                        <div class="meta-value" id="download-setting"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-child"></i> FTC</div>
+                        <div class="meta-value" id="ftc"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-star"></i> お気に入り公開</div>
+                        <div class="meta-value" id="open-favorite"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-shopping-bag"></i> 収益化済みユーザー</div>
+                        <div class="meta-value" id="commerce-user"></div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label"><i class="fas fa-question"></i> ttSeller</div>
+                        <div class="meta-value" id="tt-seller"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>

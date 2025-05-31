@@ -1,0 +1,38 @@
+/**
+ * Utility Classes
+ * ローダー、エラー表示などのユーティリティクラス定義
+ */
+
+/* ローダー表示 */
+.loader-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: var(--spacing-xl) 0;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid var(--light-grey);
+    border-top-color: var(--primary-color);
+    animation: spin 1s infinite linear;
+}
+
+/* エラー表示 */
+.error-container {
+    display: none;
+    padding: var(--spacing-md);
+    background-color: #f8d7da;
+    color: #721c24;
+    border-radius: var(--border-radius-md);
+    margin: var(--spacing-lg) 0;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.error-container i {
+    margin-right: var(--spacing-xs);
+    font-size: 1.2rem;
+}

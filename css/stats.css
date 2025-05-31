@@ -1,0 +1,48 @@
+/**
+ * Stats Component
+ * 統計情報表示のスタイル定義
+ */
+
+/* 統計コンテナ */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    padding: 0;
+    background-color: #fff;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, .05);
+}
+
+/* 統計アイテム */
+.stat-item {
+    padding: 1.3rem var(--spacing-xs) var(--spacing-md);
+    text-align: center;
+    border-right: 1px solid var(--light-grey);
+    border-bottom: 1px solid var(--light-grey);
+    transition: all var(--transition-fast);
+}
+
+.stat-item:hover {
+    background-color: rgba(23, 162, 184, .05);
+}
+
+.stat-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+/* 統計値 */
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.2rem;
+}
+
+/* 統計ラベル */
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--dark-grey);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
