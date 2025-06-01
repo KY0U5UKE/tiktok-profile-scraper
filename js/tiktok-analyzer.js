@@ -1,16 +1,17 @@
 /**
  * TikTok Profile Scraper - TikTok Analyzer
- * TikTokプロフィールの分析処理を行うクラス
+ * TikTokプロフィールの解析処理を行うクラス
  */
 
 export class TikTokAnalyzer {
-    constructor(elements, uiManager) {
+    constructor(elements, uiManager, config) {
         this.elements = elements;
         this.uiManager = uiManager;
+        this.config = config;
     }
 
     /**
-     * TikTokプロフィールを分析する
+     * TikTokプロフィールを解析する
      */
     async analyzeTikTokProfile() {
         let tiktokId = this.elements.tiktokIdInput.value.trim();
@@ -31,9 +32,15 @@ export class TikTokAnalyzer {
         this.uiManager.showLoading();
 
         try {
-            // TikTokデータを取得
-            const response = await fetch(`php/tiktok-scrape.php?id=${encodeURIComponent(tiktokId)}`);
-            const data = await response.json();
+            let data;
+            
+            if (this.config.USE_PHP) {
+                // PHP経由でデータを取得
+                data = await this.fetchDataViaPhp(tiktokId);
+            } else {
+                // AllOrigins API経由でデータを取得
+                data = await this.fetchDataViaAllOrigins(tiktokId);
+            }
 
             if (data.error) {
                 this.uiManager.showError(data.error);
@@ -56,6 +63,36 @@ export class TikTokAnalyzer {
         } catch (error) {
             console.error('エラー:', error);
             this.uiManager.showError('プロフィールの取得中にエラーが発生しました');
+        }
+    }
+
+    /**
+     * PHP経由でデータを取得
+     */
+    async fetchDataViaPhp(tiktokId) {
+        const response = await fetch(`php/tiktok-scrape.php?id=${encodeURIComponent(tiktokId)}`);
+        return await response.json();
+    }
+
+    /**
+     * AllOrigins API経由でデータを取得
+     */
+    async fetchDataViaAllOrigins(tiktokId) {
+        try {
+            const tiktokUrl = `https://www.tiktok.com/@${tiktokId}`;
+            const encoded = encodeURIComponent(tiktokUrl);
+            const response = await fetch(`https://api.allorigins.win/raw?url=${encoded}`);
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const html = await response.text();
+            return { html: html };
+            
+        } catch (error) {
+            console.error('AllOrigins API エラー:', error);
+            return { error: 'データの取得に失敗しました。しばらく時間をおいて再試行してください。' };
         }
     }
 

@@ -7,6 +7,12 @@ import { DOMElements } from './dom-manager.js';
 import { UIManager } from './ui-manager.js';
 import { TikTokAnalyzer } from './tiktok-analyzer.js';
 
+// 設定
+const CONFIG = {
+    // trueでPHP使用、falseでAllOrigins API使用
+    USE_PHP: true
+};
+
 document.addEventListener('DOMContentLoaded', function () {
     // DOM要素を初期化
     const elements = new DOMElements();
@@ -14,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // UIマネージャーを初期化
     const uiManager = new UIManager(elements);
     
-    // TikTok分析機能を初期化
-    const analyzer = new TikTokAnalyzer(elements, uiManager);
+    // TikTok解析機能を初期化（コンフィグを渡す）
+    const analyzer = new TikTokAnalyzer(elements, uiManager, CONFIG);
 
     // イベントリスナーの設定
     setupEventListeners(elements, analyzer, uiManager);
@@ -30,14 +36,14 @@ function setupEventListeners(elements, analyzer, uiManager) {
         uiManager.toggleAdvancedInfo();
     });
 
-    // Enterキーで分析実行
+    // Enterキーで解析実行
     elements.tiktokIdInput.addEventListener('keyup', function (event) {
         if (event.key === 'Enter') {
             elements.analyzeBtn.click();
         }
     });
 
-    // 分析ボタンのクリックイベント
+    // 解析ボタンのクリックイベント
     elements.analyzeBtn.addEventListener('click', async function () {
         await analyzer.analyzeTikTokProfile();
     });
