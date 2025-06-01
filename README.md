@@ -26,7 +26,7 @@ TikTokのユーザープロフィール情報を取得・表示するWebアプ�
 - モダンなWebブラウザ（Chrome, Firefox, Safari, Edge の最新版）
 
 #### 手順
-1. **リポジトリをダウンロード**
+1. **リポジトリをクローン**
    ```bash
    git clone https://github.com/KY0U5UKE/tiktok-profile-scraper.git
    cd tiktok-profile-scraper
@@ -62,7 +62,7 @@ TikTokのユーザープロフィール情報を取得・表示するWebアプ�
 
 #### 手順
 
-**1. リポジトリをダウンロード**
+**1. リポジトリをクローン**
 ```bash
 git clone https://github.com/KY0U5UKE/tiktok-profile-scraper.git
 cd tiktok-profile-scraper
