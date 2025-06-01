@@ -10,7 +10,7 @@ import { TikTokAnalyzer } from './tiktok-analyzer.js';
 // 設定
 const CONFIG = {
     // trueでPHP使用、falseでAllOrigins API使用
-    USE_PHP: true
+    USE_PHP: false
 };
 
 document.addEventListener('DOMContentLoaded', function () {
