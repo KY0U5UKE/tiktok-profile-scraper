@@ -168,15 +168,17 @@ MS4wLjABAAAAv7iSuuXDJGDvJkmH_vz1qkDZYo1apxgzaxdBSeIuPiM
 
 ```css
 :root {
-    /* メインカラー */
-    --primary-color: #17a2b8;      /* 青緑（デフォルト） */
-    --secondary-color: #f8f9fa;    /* 薄いグレー */
-    --text-color: #212529;         /* メインテキスト */
+    /* カラーパレット */
+    --primary-color: #17a2b8;      /* メインカラー（青緑） */
+    --secondary-color: #f8f9fa;    /* セカンダリカラー（薄いグレー） */
+    --text-color: #212529;         /* メインテキストカラー */
+    --light-grey: #e9ecef;         /* 薄いグレー */
+    --dark-grey: #6c757d;          /* 濃いグレー */
     
-    /* お好みで変更してください */
-    /* --primary-color: #ff6b6b;   例：赤系 */
-    /* --primary-color: #4ecdc4;   例：ターコイズ */
-}
+    /* エフェクト */
+    --shadow: 0 4px 6px rgba(0, 0, 0, .1);           /* 標準シャドウ */
+    --shadow-hover: 0 6px 12px rgba(0, 0, 0, .15);   /* ホバー時シャドウ */
+...
 ```
 
 ### データ取得方法の切り替え
