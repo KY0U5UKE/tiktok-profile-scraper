@@ -4,17 +4,17 @@
 
 TikTokのユーザープロフィール情報を取得・表示するWebアプリケーションです。ユーザー名を入力するだけで、フォロワー数、フォロー数、投稿数などの詳細な統計情報を取得できます。
 
-## ✨ 主な機能
+## 主な機能
 
 - **プロフィール情報取得**: ユーザー名、表示名、プロフィール画像などの基本情報
 - **統計情報表示**: フォロワー数、フォロー数、いいね数、投稿数の詳細解析
 - **レスポンシブデザイン**: デスクトップ・モバイル両対応
 
-## 🚀 デモ
+## デモ
 
 **Live Demo**: [https://KY0U5UKE.github.io/tiktok-profile-scraper/](https://ky0u5uke.github.io/tiktok-profile-scraper/)
 
-## 🛠️ セットアップ方法
+## セットアップ方法
 
 このツールは2つの方法で使用できます：
 
@@ -131,7 +131,7 @@ http://localhost/tiktok-profile-scraper/
 - ✅ 外部APIに依存しない
 - ❌ サーバー環境が必要
 
-## 📖 使用方法
+## 使用方法
 
 ### 基本的な使い方
 
@@ -160,7 +160,7 @@ https://www.tiktok.com/@tiktok
 MS4wLjABAAAAv7iSuuXDJGDvJkmH_vz1qkDZYo1apxgzaxdBSeIuPiM
 ```
 
-## 🎨 カスタマイズ
+## カスタマイズ
 
 ### テーマカラーの変更
 
@@ -192,7 +192,7 @@ const CONFIG = {
 };
 ```
 
-## 📁 プロジェクト構造
+## プロジェクト構造
 
 ```
 tiktok-profile-scraper/
@@ -221,7 +221,7 @@ tiktok-profile-scraper/
     └── tiktok-scrape.php      # PHP API（サーバー使用時）
 ```
 
-## 🔧 トラブルシューティング
+## トラブルシューティング
 
 ### よくある問題
 
@@ -239,11 +239,11 @@ tiktok-profile-scraper/
 - PHPモードの使用を検討してください
 - ネットワーク接続を確認してください
 
-## 📝 ライセンス
+## ライセンス
 
 このプロジェクトは [MIT License](LICENSE) のもとで公開されています。
 
-## ⚠️ 免責事項
+## 免責事項
 
 - このツールは教育・研究目的で作成されています
 - TikTokの利用規約を遵守してご使用ください
@@ -251,7 +251,7 @@ tiktok-profile-scraper/
 - データの正確性や可用性は保証されません
 - 利用により生じた損害について、作者は一切の責任を負いません
 
-## 📞 サポート・お問い合わせ
+## サポート・お問い合わせ
 
 **Issues**: [GitHub Issues](https://github.com/KY0U5UKE/tiktok-profile-scraper/issues)
 
