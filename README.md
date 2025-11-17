@@ -1,8 +1,9 @@
-# TikTok  Scraper
+# TikTok  Profile  Scraper
 
 ![Demo](assets/demo.gif)
 
 TikTokの基本的なユーザープロフィール情報を取得・表示するWebアプリケーションです。ユーザー名を入力するだけで、フォロワー数、フォロー数、投稿数などの詳細な統計情報を取得できます。
+**現在AllOriginsのサーバーがダウンしており、方法1が使えない状況です。対策中です。**
 
 ## 主な機能
 
@@ -13,6 +14,7 @@ TikTokの基本的なユーザープロフィール情報を取得・表示す�
 ## デモ
 
 **Live Demo**: [https://KY0U5UKE.github.io/tiktok-profile-scraper/](https://ky0u5uke.github.io/tiktok-profile-scraper/)
+****
 
 ## セットアップ方法
 
